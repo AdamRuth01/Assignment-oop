@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.*;
 
-public class UserList {
+public class userList {
 
     String dbName = "users.txt";
     UserDatabase db;
@@ -10,7 +10,7 @@ public class UserList {
     // Här lagras användare med hjälp av sina unika ID
     HashMap<Integer, User> users;
 
-    public UserList() {
+    public userList() {
         users = new HashMap<Integer,User>();
         db = new UserDatabase(dbName);
     }
