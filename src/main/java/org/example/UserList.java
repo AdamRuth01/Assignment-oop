@@ -89,7 +89,8 @@ public class userList {
         while (!sorterad) {
             sorterad = true;
             for (int i = 0; i < list.size() - 1; i++) {
-                if (list.get(i).getE_Name().compareTo(list.get(i + 1).getE_Name()) > 0) {
+                //if (list.get(i).getE_Name().compareTo(list.get(i + 1).getE_Name()) > 0) {
+                if (list.get(i).getE_name().toLowerCase().compareTo(list.get(i + 1).getE_name().toLowerCase()) > 0) {
                     temp = list.get(i);
                     list.set(i, list.get(i + 1));
                     list.set(i + 1, temp);
