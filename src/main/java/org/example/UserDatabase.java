@@ -1,15 +1,20 @@
+/**
+ *
+ */
 package org.example;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Scanner;
-
 public class UserDatabase {
     String database;
 
+    /**
+     * Constructor.
+     * @param db The name of the file where the user data is stored.
+     */
     public UserDatabase(String db) {
         try {
             database = System.getProperty("user.dir") + System.getProperty("file.separator") + db;
@@ -22,9 +27,12 @@ public class UserDatabase {
         }
     }//Constructor
 
+    /**
+     * Store user data in to text file
+     * @param users Collection of {@link User}
+     */
     public void storeUsers(Collection<User> users) {
         FileWriter userFile = null;
-
         try {
             userFile = new FileWriter(database, false);
             for (User obj : users) {
@@ -35,7 +43,6 @@ public class UserDatabase {
                         + obj.getEmail();
 
                 userFile.write(userRow + "\n");
-
             }
             userFile.close();
         } catch (Exception ex) {
@@ -44,6 +51,10 @@ public class UserDatabase {
         }
     }
 
+    /**
+     * Retrieve Users is
+     * @return
+     */
     public Collection<User> retrieveUsers() {
         Collection<User> result = new ArrayList<>();
         File fileToRead = new File(database);
@@ -64,7 +75,5 @@ public class UserDatabase {
         }
         return result;
     }
-
-
 }//UserDatabase
 

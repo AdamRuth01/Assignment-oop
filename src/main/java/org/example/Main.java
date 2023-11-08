@@ -1,12 +1,8 @@
 package org.example;
-
+import javax.swing.*;
 import java.util.*;
-
 public class Main {
-
     userList users = new userList();
-
-
     /**
      * mainMenu() Is the selection fas, for the user to see the
      * different options that are available.
@@ -14,29 +10,32 @@ public class Main {
      * for forwarding and run the console choice
      */
     private void mainMenu() {
-        while (true) {
-            System.out.println("***Options *USER* Menu***\n"
-                    + "1: Add user \n"
-                    + "2: Show users\n"
-                    + "3: Remove user\n"
-                    + "4: Search by id\n"
-                    + "5: Get users by e_name\n"
-                    + "6: Search users where e_name contains a value\n"
-                    + "7: Search users by age\n"
-                    + "8: Store user list\n"
-                    + "9: Retrieve user list\n"
-                    + "10: Sort user by e_name\n"
-                    + "11: Quit\n" +
-                    "Select option:\n");
-            Scanner scanner = new Scanner(System.in);
-            int input = scanner.nextInt();
-            if (input == 11) {
-                return;
-            }
-            menuSelection(input);
-        }
-    }
+          while (true) {
+              try {
+              System.out.println("***Options *USER* Menu***\n"
+                      + "1: Add user \n"
+                      + "2: Show users\n"
+                      + "3: Remove user\n"
+                      + "4: Search by id\n"
+                      + "5: Get users by e_name\n"
+                      + "6: Search users where e_name contains a value\n"
+                      + "7: Search users by age\n"
+                      + "8: Store user list\n"
+                      + "9: Retrieve user list\n"
+                      + "10: Sort user by Las name\n"
+                      + "11: Quit\n");
+              Scanner scanner = new Scanner(System.in);
+              int input = scanner.nextInt();
+              if (input == 11) {
+                  return;
+              }
+              menuSelection(input);
+              }catch (Exception e){
+                  System.out.println("Illegal input! ");
+          }
 
+      }
+    }
     /**
      * menuSelection() has the function of forwarding the code
      * for the method that has been chosen by the user, (like a transfer)
@@ -78,14 +77,13 @@ public class Main {
     private void addUser() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Please enter id f_name e_name age email ");
-        String respon = scanner.nextLine();
-        String[] userData = respon.split(" ");
+        String response = scanner.nextLine();
+        String[] userData = response.split(" ");
         if (checkUserInput(userData)) {
             User user1 = new User(Integer.parseInt(userData[0]), userData[1], userData[2], Integer.parseInt(userData[3]), userData[4]);
             users.addUser(user1);
         }
     }
-
     private void showUsers() {
         Collection<User> registredUsers = users.getUsers();
         for (User aUser : registredUsers) {
@@ -161,14 +159,6 @@ public class Main {
             System.out.println(obj);
         }
     }
-
-
-
-
-
-
-
-
     private boolean checkUserInput(String[] userInput) {
         if (userInput.length != 5) {
             System.out.println("Missing parameters");
@@ -176,11 +166,6 @@ public class Main {
         }//if ()
         return true;
     }
-
-
-
-
-
     private void ListUsers() {
         Collection<User> registredUsers = users.getUsers();
         for (User aUser : registredUsers) {
