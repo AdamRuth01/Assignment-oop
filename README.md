@@ -85,27 +85,62 @@ _main description of the class `UserList`_:
 
 > Is the intermediary to the `User()` class --> "constructor and toString" and the receiver and returner of the main class methods themselves.
 > Storage, editing and sorting are properties that `UserList()` possesses.
-> 
+
+_UserList methods_:
+_Description of `addUser()`_:
+> - `addUser()` is adding the import from main class, using a get id from `User()`
+> and puts it in a HashMap.
+
+_Description of `removeUser()`_:
+>`removeUser()` is receiving an id from main class which. The given id will be removed from the HashMap.
+
+_Description of `getUserById()`_:
+> `getUserById()` is receiving an id from main class, and returns  the object and all the values/elements of the object.
+
+_Description of `searchUsersByE_Name()`_:
+>`searchUsersByE_Name()` is receiving the last name from main class, and search and return every object with same last name. "Includes big and small letters"!
+
+_Description of `searchUsersByAge()`_:
+>`searchUsersByAge()` is receiving a given age from main class and returns all the objects with the same age.
+
+_Description of `userList()`_;
+>`userList()`is just for storage the objects with a given id.
+
+_Description of `retrieveUserList()`_:
+>`retrieveUserList()` is receiving the full list of objects.
+
+_Description of `storeUserList()`_:
+>`storeUserList()` is saving the current objects in  the list.
+
+_Description of `sortera()`_:
+>`sortera()` have the function of picking up 
 
 
  ### - `UserDatabase`
 _Class Description_:
-
-
-
- 
-
+> `UserDatabase()` have the function of an dataBase but without the `SQL` function.
+> Instead of SQL i used and created a text file for the saving function, instead of starting to save again after each new run of the program.
+> As well as we store the users we can retrieve the existing users that have been saved in the text file.
  ### - `User`
 _Class Description_:
 > `Class User` is  where we store constructor,getters and setters and in the end the toString.
 >
 
-
-
-
-
 ## How clean code is applied and what principals are used
 
+1. _1. Keep configurable data at high levels._:
+>
+2. _Prefer polymorphism to if/else or switch/case._:
+>
+3. _Separate multi-threading code._:
+>
+4. _Prevent over-configurability._:
+>
+5. _Use dependency injection._:
+>
+6. _Follow Law of Demeter. A class should know only its direct
+   dependencies._:
+>
 
 
  
